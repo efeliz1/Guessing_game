@@ -4,6 +4,10 @@
 
 int main()
 {
+	//low = lowest number input
+	// high = highest number input 
+	//middle = middle between low + high
+	//
 	int low, high, middle, search_space;
 
 
@@ -20,16 +24,18 @@ int main()
 	int counter = 0;
 	search_space = high - low;
 	printf("%i", search_space);
-	/*while ()
+	/*while (low < high)
 	{
 		//cut search space by half
+		search_space = high - low;
 
 		//increment the counter
+		counter = counter + 1; 
 	}
 	printf("I would guess your number in %d question: ", counter);
 	*/
 
-	counter = 1;
+	//counter = 1;
 
 	char answer;
 	while (low <= high)
@@ -41,7 +47,7 @@ int main()
 		printf("Please enter g if your number is greater to %d \n", middle);
 		scanf(" %c", &answer);
 
-		if (answer == 'e')
+		if (answer == 'e' || answer == 'E')
 		{
 			low = high + 1;
 			printf("Finish \n");
@@ -49,7 +55,7 @@ int main()
 
 		else
 		{
-			if (answer == 's')
+			if (answer == 's' || answer == 'S')
 			{
 				high = middle - 1;
 			}
