@@ -2,40 +2,41 @@
 
 #include<stdio.h>
 
-int main()
+int main(void)
 {
 	//low = lowest number input
 	// high = highest number input 
 	//middle = middle between low + high
-	//
+	// search space = 
 	int low, high, middle, search_space;
 
 
 	puts("Welcome to the Guessing game\n");
 
-	printf("Please enter the low bound \n");
+	printf("\nPlease enter the low bound number: ");
 	scanf("%i", &low);
 
-	printf("Please enter the high bound \n");
+	printf("\nPlease enter the high bound number: ");
 	scanf("%i", &high);
 
-	printf("Your low is %d and your high %d \n", low, high);
+
 
 	int counter = 0;
-	search_space = high - low;
-	printf("%i", search_space);
-	/*while (low < high)
+	
+	while(low< high)
 	{
 		//cut search space by half
-		search_space = high - low;
+		middle = (high + low) / 2;
+		low =middle + 1;
+		
 
 		//increment the counter
 		counter = counter + 1; 
 	}
-	printf("I would guess your number in %d question: ", counter);
-	*/
+	printf("\nI would guess your number in %d question\n", counter);
+	
 
-	//counter = 1;
+	counter = 0;
 
 	char answer;
 	while (low <= high)
@@ -47,15 +48,15 @@ int main()
 		printf("Please enter g if your number is greater to %d \n", middle);
 		scanf(" %c", &answer);
 
-		if (answer == 'e' || answer == 'E')
+		if (answer == 'e' || answer == 'E') // E = correct number
 		{
 			low = high + 1;
-			printf("Finish \n");
+			printf("\nCorrect \n");
 		}
 
 		else
 		{
-			if (answer == 's' || answer == 'S')
+			if (answer == 's' || answer == 'S') // S = smaller number
 			{
 				high = middle - 1;
 			}
@@ -64,6 +65,13 @@ int main()
 				low = middle + 1;
 			}
 		}
+		if(low == middle || high == middle)
+			{
+				puts("Cheating");
+				scanf(" ");
+				break;
+			}
+		counter = counter + 1;
 	}
 
 }
