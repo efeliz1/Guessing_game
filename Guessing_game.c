@@ -7,7 +7,6 @@ int main(void)
 	//low = lowest number input
 	// high = highest number input 
 	//middle = middle between low + high
-	// search space = 
 	int low, high, middle, search_space;
 
 
