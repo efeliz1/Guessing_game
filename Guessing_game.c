@@ -7,7 +7,8 @@ int main(void)
 	//low = lowest number input
 	// high = highest number input 
 	//middle = middle between low + high
-	int low, high, middle, search_space;
+	int low, high, middle, search_space,counter;
+	char answer;
 
 
 	puts("Welcome to the Guessing game\n");
@@ -18,26 +19,27 @@ int main(void)
 	printf("\nPlease enter the high bound number: ");
 	scanf("%i", &high);
 
+	printf("Your low is %d and your high %d \n", low, high);
 
 
-	int counter = 0;
+
+	// int counter = 0;
 	
-	while(low< high)
-	{
-		//cut search space by half
-		middle = (high + low) / 2;
-		low =middle + 1;
+	// while(low< high)
+	// {
+	// 	//cut search space by half
+	// 	middle = (high + low) / 2;
+	// 	low =middle + 1;
 		
 
-		//increment the counter
-		counter = counter + 1; 
-	}
-	printf("\nI would guess your number in %d question\n", counter);
+	// 	//increment the counter
+	// 	counter = counter + 1; 
+	// }
+	// printf("\nI would guess your number in %d question\n", counter);
 	
 
-	counter = 0;
+	// counter = 0;
 
-	char answer;
 	while (low <= high)
 	{
 		middle = (high + low) / 2;
@@ -47,29 +49,26 @@ int main(void)
 		printf("Please enter g if your number is greater to %d \n", middle);
 		scanf(" %c", &answer);
 
-		if (answer == 'e' || answer == 'E') // E = correct number
+		if (answer == 'e') // E = correct number
 		{
-			low = high + 1;
 			printf("\nCorrect \n");
 		}
 
 		else
 		{
-			if (answer == 's' || answer == 'S') // S = smaller number
+			if (answer == 's') // S = smaller number
 			{
 				high = middle - 1;
 			}
-			else
+			if (answer == 'g')
 			{
 				low = middle + 1;
 			}
 		}
-		if(low == middle || high == middle)
-			{
-				puts("Cheating");
-				scanf(" ");
-				break;
-			}
+		if(low == middle || low == high)
+		{
+			printf("You're cheating");
+		}
 		counter = counter + 1;
 	}
 
