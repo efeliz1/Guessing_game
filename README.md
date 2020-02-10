@@ -7,7 +7,7 @@
 
 the game you would have you input (LOW NUMBER) and (HIGH Number)
 
- *****It would Quess the amount of question untill towards your answer.******
+ *****It would Quess the amount of question untill towards your answer.****
 
 - e being if your number is equal to the programs guess.
 - s if your number is smaller than the programs guess.
